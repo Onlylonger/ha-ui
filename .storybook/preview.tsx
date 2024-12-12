@@ -1,13 +1,7 @@
 import type { Preview } from "@storybook/react";
-import {
-  Title,
-  Subtitle,
-  Description,
-  Primary,
-  Controls,
-  Stories,
-} from "@storybook/blocks";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
+import { BasicTheme } from "../src/components/Theme";
 
 const preview: Preview = {
   tags: ["autodocs"],
@@ -23,3 +17,12 @@ const preview: Preview = {
 };
 
 export default preview;
+
+export const decorators = [
+  (Story) => (
+    <ThemeProvider theme={BasicTheme}>
+      <CssBaseline />
+      <Story />
+    </ThemeProvider>
+  ),
+];

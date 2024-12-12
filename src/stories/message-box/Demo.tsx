@@ -1,10 +1,11 @@
+import { Button } from "@mui/material";
 import { messageBox, MessageBoxContainer } from "../../components/MessageBox";
 
 export default function Demo() {
   return (
     <>
       <MessageBoxContainer />
-      <button
+      <Button
         onClick={async () => {
           const action = await messageBox.open({
             title: `${Math.random()}`,
@@ -21,7 +22,7 @@ export default function Demo() {
         }}
       >
         open messageBox
-      </button>{" "}
+      </Button>{" "}
     </>
   );
 }
